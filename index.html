@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO Meta Tags -->
+  <title>Fauzan Al-Ghifari | Data Analyst & Industrial Engineering</title>
+  <meta name="description" content="Portfolio Fauzan Al-Ghifari — Mahasiswa Teknik Industri, penggemar analisis data, AI, dan peningkatan proses bisnis." />
+  <meta name="keywords" content="Fauzan Al-Ghifari, Data Analyst, Industrial Engineering, Python, SQL, Portfolio" />
+  <meta name="author" content="Fauzan Al-Ghifari" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Fauzan Al-Ghifari | Portfolio" />
+  <meta property="og:description" content="Mahasiswa Teknik Industri | Penggemar Analisis Data | Pemecah Masalah" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://fauzanalghif.github.io/portfolio/" />
+
+  <!-- Fonts: Clash Display + DM Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- Boxicons -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========== CURSOR ========== -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- ========== LOADER ========== -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-text">FA</div>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-bracket">&lt;</span>FA<span class="logo-bracket">/&gt;</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about" class="nav-link">Tentang</a></li>
+        <li><a href="#skills" class="nav-link">Keahlian</a></li>
+        <li><a href="#projects" class="nav-link">Proyek</a></li>
+        <li><a href="#certificates" class="nav-link">Sertifikat</a></li>
+        <li><a href="#contact" class="nav-link">Kontak</a></li>
+        <li>
+          <!-- ⬇ GANTI LINK CV DI SINI -->
+          <a href="Fauzan Al-Ghifari CV.pdf" class="nav-cv-btn" download>
+            <i class='bx bx-download'></i> CV
+          </a>
+        </li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="hero">
+    <!-- Animated background grid -->
+    <div class="hero-grid"></div>
+    <!-- Floating orbs -->
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <div class="hero-container">
+      <div class="hero-left" data-aos="fade-right">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          <span>Open to Opportunities</span>
+        </div>
+        <h1 class="hero-title">
+          Hi, Saya<br />
+          <span class="hero-name">Fauzan<br/>Al-Ghifari</span>
+        </h1>
+        <div class="hero-roles">
+          <span class="role-prefix">—</span>
+          <span class="roles-wrapper">
+            <span class="role-item active">Mahasiswa Teknik Industri</span>
+            <span class="role-item">Penggemar Analisis Data</span>
+            <span class="role-item">AI Enthusiast</span>
+            <span class="role-item">Pemecah Masalah</span>
+          </span>
+        </div>
+        <p class="hero-desc">
+          Mahasiswa yang bersemangat dalam transformasi data menjadi keputusan bisnis yang bermakna. Fokus pada analisis data, kecerdasan buatan, dan optimasi proses.
+        </p>
+        <div class="hero-actions">
+          <!-- ⬇ GANTI LINK CV DI SINI -->
+          <a href="Fauzan Al-Ghifari CV.pdf" class="btn-primary" download>
+            <i class='bx bx-download'></i>
+            <span>Unduh CV</span>
+          </a>
+          <a href="#contact" class="btn-secondary">
+            <span>Hubungi Saya</span>
+            <i class='bx bx-right-arrow-alt'></i>
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-num" data-target="5">0</span>
+            <span class="stat-label">Proyek</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num" data-target="8">0</span>
+            <span class="stat-label">Sertifikat</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num" data-target="3">0</span>
+            <span class="stat-label">Tahun Belajar</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-right" data-aos="fade-left">
+        <div class="profile-frame">
+          <div class="profile-glow"></div>
+          <div class="profile-ring"></div>
+          <!-- ⬇ GANTI FOTO PROFIL DI SINI — ubah src="profile.png" -->
+          <img src="profile.png" alt="Foto Profil Fauzan Al-Ghifari" class="profile-img" onerror="this.src='https://ui-avatars.com/api/?name=Fauzan+Al-Ghifari&size=400&background=6c63ff&color=fff&bold=true'" />
+          <div class="profile-card floating">
+            <i class='bx bx-bar-chart-alt-2'></i>
+            <div>
+              <span class="card-title">Data Analytics</span>
+              <span class="card-sub">Python · SQL · Excel</span>
+            </div>
+          </div>
+          <div class="profile-card-2 floating-delay">
+            <i class='bx bx-brain'></i>
+            <div>
+              <span class="card-title">AI & ML</span>
+              <span class="card-sub">In Progress</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">01. Tentang Saya</span>
+        <h2 class="section-title">Siapa <span class="accent">Saya?</span></h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text" data-aos="fade-right">
+          <p class="about-lead">
+            Saya adalah mahasiswa <strong>Teknik Industri</strong> yang memiliki semangat tinggi untuk memecahkan masalah nyata melalui pendekatan berbasis data dan teknologi.
+          </p>
+          <p>
+            Minat saya terletak di persimpangan antara <em>kecerdasan buatan</em>, <em>analisis data</em>, dan <em>optimasi proses bisnis</em>. Saya percaya bahwa data yang tepat, dianalisis dengan cara yang tepat, dapat mengubah cara kita membuat keputusan.
+          </p>
+          <p>
+            Saat ini saya aktif mengembangkan kemampuan dalam Python, SQL, visualisasi data, dan machine learning — sambil menerapkannya dalam proyek-proyek akademik dan personal.
+          </p>
+          <div class="about-highlights">
+            <div class="highlight-item">
+              <i class='bx bx-trending-up'></i>
+              <span>Analisis Data</span>
+            </div>
+            <div class="highlight-item">
+              <i class='bx bx-brain'></i>
+              <span>Kecerdasan Buatan</span>
+            </div>
+            <div class="highlight-item">
+              <i class='bx bx-cog'></i>
+              <span>Teknik Industri</span>
+            </div>
+            <div class="highlight-item">
+              <i class='bx bx-bulb'></i>
+              <span>Pemecahan Masalah</span>
+            </div>
+            <div class="highlight-item">
+              <i class='bx bx-refresh'></i>
+              <span>Peningkatan Proses</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-visual" data-aos="fade-left">
+          <div class="about-card">
+            <div class="about-card-header">
+              <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
+            </div>
+            <div class="about-code">
+              <span class="code-line"><span class="c-purple">const</span> <span class="c-blue">fauzan</span> = {</span>
+              <span class="code-line indent"><span class="c-green">role</span>: <span class="c-orange">"Industrial Engineering Student"</span>,</span>
+              <span class="code-line indent"><span class="c-green">university</span>: <span class="c-orange">"Indonesia"</span>,</span>
+              <span class="code-line indent"><span class="c-green">focus</span>: [</span>
+              <span class="code-line indent2"><span class="c-orange">"Data Analytics"</span>,</span>
+              <span class="code-line indent2"><span class="c-orange">"Artificial Intelligence"</span>,</span>
+              <span class="code-line indent2"><span class="c-orange">"Process Optimization"</span>,</span>
+              <span class="code-line indent">],</span>
+              <span class="code-line indent"><span class="c-green">status</span>: <span class="c-orange">"Open to Internship 🚀"</span>,</span>
+              <span class="code-line indent"><span class="c-green">goal</span>: <span class="c-purple">() =&gt;</span> {</span>
+              <span class="code-line indent2"><span class="c-purple">return</span> <span class="c-orange">"Transform data into insights"</span>;</span>
+              <span class="code-line indent">},</span>
+              <span class="code-line">};</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SKILLS ========== -->
+  <section class="section skills" id="skills">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">02. Keahlian</span>
+        <h2 class="section-title">Apa yang Saya <span class="accent">Kuasai?</span></h2>
+      </div>
+
+      <div class="skills-grid">
+        <!-- Technical Skills -->
+        <div class="skills-col" data-aos="fade-right">
+          <h3 class="skills-col-title"><i class='bx bx-code-alt'></i> Technical Skills</h3>
+          <div class="skill-bars">
+            <!-- GANTI nilai persen sesuai kemampuanmu -->
+            <div class="skill-bar-item">
+              <div class="skill-bar-header">
+                <span class="skill-name"><i class='bx bx-table'></i> Microsoft Excel</span>
+                <span class="skill-pct">90%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill" data-width="90"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-header">
+                <span class="skill-name"><i class='bx bx-data'></i> SQL</span>
+                <span class="skill-pct">75%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill" data-width="75"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-header">
+                <span class="skill-name"><i class='bx bxl-python'></i> Python</span>
+                <span class="skill-pct">70%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill" data-width="70"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-header">
+                <span class="skill-name"><i class='bx bx-bar-chart'></i> Data Visualization</span>
+                <span class="skill-pct">80%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill" data-width="80"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-header">
+                <span class="skill-name"><i class='bx bxl-html5'></i> HTML & CSS</span>
+                <span class="skill-pct">65%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill" data-width="65"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-header">
+                <span class="skill-name"><i class='bx bxl-javascript'></i> JavaScript</span>
+                <span class="skill-pct">55%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill" data-width="55"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Soft Skills -->
+        <div class="skills-col" data-aos="fade-left">
+          <h3 class="skills-col-title"><i class='bx bx-user-check'></i> Soft Skills</h3>
+          <div class="soft-skills-grid">
+            <div class="soft-card">
+              <div class="soft-icon"><i class='bx bx-bulb'></i></div>
+              <span>Problem Solving</span>
+              <div class="soft-level">
+                <span class="lvl active"></span><span class="lvl active"></span><span class="lvl active"></span><span class="lvl active"></span><span class="lvl active"></span>
+              </div>
+            </div>
+            <div class="soft-card">
+              <div class="soft-icon"><i class='bx bx-conversation'></i></div>
+              <span>Komunikasi</span>
+              <div class="soft-level">
+                <span class="lvl active"></span><span class="lvl active"></span><span class="lvl active"></span><span class="lvl active"></span><span class="lvl"></span>
+              </div>
+            </div>
+            <div class="soft-card">
+              <div class="soft-icon"><i class='bx bx-group'></i></div>
+              <span>Team Work</span>
+              <div class="soft-level">
+                <span class="lvl active"></span><span class="lvl active"></span><span class="lvl active"></span><span class="lvl active"></span><span class="lvl active"></span>
+              </div>
+            </div>
+            <div class="soft-card">
+              <div class="soft-icon"><i class='bx bx-time'></i></div>
+              <span>Time Management</span>
+              <div class="soft-level">
+                <span class="lvl active"></span><span class="lvl active"></span><span class="lvl active"></span><span class="lvl active"></span><span class="lvl"></span>
+              </div>
+            </div>
+            <div class="soft-card">
+              <div class="soft-icon"><i class='bx bx-target-lock'></i></div>
+              <span>Analitis</span>
+              <div class="soft-level">
+                <span class="lvl active"></span><span class="lvl active"></span><span class="lvl active"></span><span class="lvl active"></span><span class="lvl active"></span>
+              </div>
+            </div>
+            <div class="soft-card">
+              <div class="soft-icon"><i class='bx bx-book-open'></i></div>
+              <span>Fast Learner</span>
+              <div class="soft-level">
+                <span class="lvl active"></span><span class="lvl active"></span><span class="lvl active"></span><span class="lvl active"></span><span class="lvl active"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tools -->
+          <h3 class="skills-col-title mt" style="margin-top:2.5rem"><i class='bx bx-wrench'></i> Tools</h3>
+          <div class="tools-grid">
+            <div class="tool-chip"><i class='bx bxl-python'></i> Python</div>
+            <div class="tool-chip"><i class='bx bx-data'></i> SQL</div>
+            <div class="tool-chip"><i class='bx bx-table'></i> Excel</div>
+            <div class="tool-chip"><i class='bx bx-bar-chart-alt-2'></i> Tableau</div>
+            <div class="tool-chip"><i class='bx bxl-power-bi'></i> Power BI</div>
+            <div class="tool-chip"><i class='bx bxl-github'></i> GitHub</div>
+            <div class="tool-chip"><i class='bx bxl-google'></i> Google Colab</div>
+            <div class="tool-chip"><i class='bx bx-brain'></i> Jupyter</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROJECTS ========== -->
+  <section class="section projects" id="projects">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">03. Proyek</span>
+        <h2 class="section-title">Karya yang Saya <span class="accent">Banggakan</span></h2>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- ⬇ PROJECT CARDS — Ubah sesuai proyek kamu -->
+        <!-- Project 1 -->
+        <div class="project-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="project-img-wrap">
+            <!-- GANTI src dengan gambar proyekmu -->
+            <img src="img/project-1.png" alt="Data Analytics Dashboard" onerror="this.parentElement.classList.add('no-img')" class="project-img" />
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="https://github.com/fauzanalghif" target="_blank" class="plink"><i class='bx bxl-github'></i></a>
+                <a href="#" target="_blank" class="plink"><i class='bx bx-link-external'></i></a>
+              </div>
+            </div>
+            <div class="project-number">01</div>
+          </div>
+          <div class="project-content">
+            <div class="project-tags">
+              <span class="ptag">Python</span><span class="ptag">Pandas</span><span class="ptag">Tableau</span>
+            </div>
+            <h3 class="project-title">Analisis Data Dashboard</h3>
+            <p class="project-desc">Dashboard interaktif untuk memvisualisasikan tren penjualan dan KPI bisnis secara real-time menggunakan Python dan Tableau.</p>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card featured" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-img-wrap">
+            <img src="img/project-2.png" alt="AI Healthcare" onerror="this.parentElement.classList.add('no-img')" class="project-img" />
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="https://github.com/fauzanalghif" target="_blank" class="plink"><i class='bx bxl-github'></i></a>
+                <a href="#" target="_blank" class="plink"><i class='bx bx-link-external'></i></a>
+              </div>
+            </div>
+            <div class="project-number">02</div>
+            <div class="project-badge">Featured</div>
+          </div>
+          <div class="project-content">
+            <div class="project-tags">
+              <span class="ptag">Python</span><span class="ptag">ML</span><span class="ptag">Healthcare</span>
+            </div>
+            <h3 class="project-title">AI untuk Perencanaan Kapasitas Pelayanan Kesehatan</h3>
+            <p class="project-desc">Model machine learning untuk memprediksi dan mengoptimalkan kapasitas pelayanan rumah sakit berdasarkan data historis pasien.</p>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="project-img-wrap">
+            <img src="img/project-3.png" alt="Ergonomics Analysis" onerror="this.parentElement.classList.add('no-img')" class="project-img" />
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="https://github.com/fauzanalghif" target="_blank" class="plink"><i class='bx bxl-github'></i></a>
+                <a href="#" target="_blank" class="plink"><i class='bx bx-link-external'></i></a>
+              </div>
+            </div>
+            <div class="project-number">03</div>
+          </div>
+          <div class="project-content">
+            <div class="project-tags">
+              <span class="ptag">AI</span><span class="ptag">Computer Vision</span><span class="ptag">Ergonomics</span>
+            </div>
+            <h3 class="project-title">Analisis Ergonomis dengan AI</h3>
+            <p class="project-desc">Sistem berbasis computer vision untuk mendeteksi postur kerja yang tidak ergonomis dan memberikan rekomendasi perbaikan secara otomatis.</p>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="project-img-wrap">
+            <img src="img/project-4.png" alt="Supply Chain" onerror="this.parentElement.classList.add('no-img')" class="project-img" />
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="https://github.com/fauzanalghif" target="_blank" class="plink"><i class='bx bxl-github'></i></a>
+                <a href="#" target="_blank" class="plink"><i class='bx bx-link-external'></i></a>
+              </div>
+            </div>
+            <div class="project-number">04</div>
+          </div>
+          <div class="project-content">
+            <div class="project-tags">
+              <span class="ptag">Excel</span><span class="ptag">SQL</span><span class="ptag">Optimization</span>
+            </div>
+            <h3 class="project-title">Optimalisasi Rantai Pasokan</h3>
+            <p class="project-desc">Analisis dan optimasi rantai pasokan menggunakan pendekatan Operations Research untuk meminimalkan biaya dan meningkatkan efisiensi distribusi.</p>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-img-wrap">
+            <img src="img/project-5.png" alt="Portfolio Website" onerror="this.parentElement.classList.add('no-img')" class="project-img" />
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="https://github.com/fauzanalghif/portfolio" target="_blank" class="plink"><i class='bx bxl-github'></i></a>
+                <a href="https://fauzanalghif.github.io/portfolio/" target="_blank" class="plink"><i class='bx bx-link-external'></i></a>
+              </div>
+            </div>
+            <div class="project-number">05</div>
+          </div>
+          <div class="project-content">
+            <div class="project-tags">
+              <span class="ptag">HTML</span><span class="ptag">CSS</span><span class="ptag">JavaScript</span>
+            </div>
+            <h3 class="project-title">Situs Web Portfolio</h3>
+            <p class="project-desc">Portfolio website personal yang dibangun dengan HTML, CSS, dan JavaScript murni dengan animasi halus dan desain responsif modern.</p>
+          </div>
+        </div>
+
+      </div><!-- /projects-grid -->
+    </div>
+  </section>
+
+  <!-- ========== CERTIFICATES ========== -->
+  <section class="section certificates" id="certificates">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">04. Sertifikat</span>
+        <h2 class="section-title">Pencapaian & <span class="accent">Sertifikasi</span></h2>
+      </div>
+
+      <div class="cert-grid">
+        <!--
+          ⬇ CARA MENGGANTI SERTIFIKAT:
+          1. Simpan gambar sertifikat di folder img/ (misal: img/cert-1.jpg)
+          2. Ganti src="img/cert-1.png" dengan nama file-mu
+          3. Ganti teks judul, penerbit, dan tahun
+        -->
+        <div class="cert-card" data-aos="fade-up" data-aos-delay="0" onclick="openCertModal(this)">
+          <div class="cert-img-wrap">
+            <img src="img/cert-1.png" alt="Sertifikat 1" onerror="this.src='https://placehold.co/400x280/1a1a2e/6c63ff?text=Certificate+1'" />
+            <div class="cert-hover-overlay"><i class='bx bx-zoom-in'></i><span>Lihat Detail</span></div>
+          </div>
+          <div class="cert-info">
+            <h4>Google Data Analytics</h4>
+            <span class="cert-issuer"><i class='bx bxl-google'></i> Google · Coursera</span>
+            <span class="cert-year">2024</span>
+          </div>
+        </div>
+
+        <div class="cert-card" data-aos="fade-up" data-aos-delay="100" onclick="openCertModal(this)">
+          <div class="cert-img-wrap">
+            <img src="img/cert-2.png" alt="Sertifikat 2" onerror="this.src='https://placehold.co/400x280/1a1a2e/6c63ff?text=Certificate+2'" />
+            <div class="cert-hover-overlay"><i class='bx bx-zoom-in'></i><span>Lihat Detail</span></div>
+          </div>
+          <div class="cert-info">
+            <h4>Python for Data Science</h4>
+            <span class="cert-issuer"><i class='bx bx-code'></i> Dicoding Indonesia</span>
+            <span class="cert-year">2024</span>
+          </div>
+        </div>
+
+        <div class="cert-card" data-aos="fade-up" data-aos-delay="200" onclick="openCertModal(this)">
+          <div class="cert-img-wrap">
+            <img src="img/cert-3.png" alt="Sertifikat 3" onerror="this.src='https://placehold.co/400x280/1a1a2e/6c63ff?text=Certificate+3'" />
+            <div class="cert-hover-overlay"><i class='bx bx-zoom-in'></i><span>Lihat Detail</span></div>
+          </div>
+          <div class="cert-info">
+            <h4>SQL for Data Analysis</h4>
+            <span class="cert-issuer"><i class='bx bx-data'></i> Udemy</span>
+            <span class="cert-year">2023</span>
+          </div>
+        </div>
+
+        <div class="cert-card" data-aos="fade-up" data-aos-delay="0" onclick="openCertModal(this)">
+          <div class="cert-img-wrap">
+            <img src="img/cert-4.png" alt="Sertifikat 4" onerror="this.src='https://placehold.co/400x280/1a1a2e/6c63ff?text=Certificate+4'" />
+            <div class="cert-hover-overlay"><i class='bx bx-zoom-in'></i><span>Lihat Detail</span></div>
+          </div>
+          <div class="cert-info">
+            <h4>Machine Learning Fundamentals</h4>
+            <span class="cert-issuer"><i class='bx bx-brain'></i> Coursera</span>
+            <span class="cert-year">2024</span>
+          </div>
+        </div>
+
+        <div class="cert-card" data-aos="fade-up" data-aos-delay="100" onclick="openCertModal(this)">
+          <div class="cert-img-wrap">
+            <img src="img/cert-5.png" alt="Sertifikat 5" onerror="this.src='https://placehold.co/400x280/1a1a2e/6c63ff?text=Certificate+5'" />
+            <div class="cert-hover-overlay"><i class='bx bx-zoom-in'></i><span>Lihat Detail</span></div>
+          </div>
+          <div class="cert-info">
+            <h4>Data Visualization with Tableau</h4>
+            <span class="cert-issuer"><i class='bx bx-bar-chart'></i> Tableau</span>
+            <span class="cert-year">2024</span>
+          </div>
+        </div>
+
+        <div class="cert-card" data-aos="fade-up" data-aos-delay="200" onclick="openCertModal(this)">
+          <div class="cert-img-wrap">
+            <img src="img/cert-6.png" alt="Sertifikat 6" onerror="this.src='https://placehold.co/400x280/1a1a2e/6c63ff?text=Certificate+6'" />
+            <div class="cert-hover-overlay"><i class='bx bx-zoom-in'></i><span>Lihat Detail</span></div>
+          </div>
+          <div class="cert-info">
+            <h4>Industrial Engineering Fundamentals</h4>
+            <span class="cert-issuer"><i class='bx bx-cog'></i> edX</span>
+            <span class="cert-year">2023</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Certificate Modal -->
+  <div class="cert-modal" id="certModal" onclick="closeCertModal(event)">
+    <div class="cert-modal-inner">
+      <button class="cert-modal-close" onclick="closeCertModal()"><i class='bx bx-x'></i></button>
+      <img id="certModalImg" src="" alt="Certificate" />
+      <div class="cert-modal-info">
+        <h4 id="certModalTitle"></h4>
+        <span id="certModalIssuer"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== CONTACT ========== -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">05. Kontak</span>
+        <h2 class="section-title">Mari <span class="accent">Terhubung!</span></h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info" data-aos="fade-right">
+          <p class="contact-lead">
+            Apakah kamu punya proyek menarik, kesempatan magang, atau sekadar ingin berdiskusi tentang data dan teknologi? Jangan ragu untuk menghubungi saya!
+          </p>
+          <div class="contact-items">
+            <!-- ⬇ GANTI email, link LinkedIn, GitHub, Instagram sesuai milikmu -->
+            <a href="mailto:fauzanalghifari11@gmail.com" class="contact-item">
+              <div class="citem-icon"><i class='bx bx-envelope'></i></div>
+              <div>
+                <span class="citem-label">Email</span>
+                <span class="citem-val">fauzanalghifari11@gmail.com</span>
+              </div>
+            </a>
+            <a href="https://www.linkedin.com/in/fauzan-al-ghifari-575085290/" target="_blank" class="contact-item">
+              <div class="citem-icon"><i class='bx bxl-linkedin'></i></div>
+              <div>
+                <span class="citem-label">LinkedIn</span>
+                <span class="citem-val">fauzan-al-ghifari</span>
+              </div>
+            </a>
+            <a href="https://github.com/fauzanalghif" target="_blank" class="contact-item">
+              <div class="citem-icon"><i class='bx bxl-github'></i></div>
+              <div>
+                <span class="citem-label">GitHub</span>
+                <span class="citem-val">fauzanalghif</span>
+              </div>
+            </a>
+            <a href="https://instagram.com/" target="_blank" class="contact-item">
+              <!-- ⬇ GANTI link Instagram -->
+              <div class="citem-icon"><i class='bx bxl-instagram'></i></div>
+              <div>
+                <span class="citem-label">Instagram</span>
+                <span class="citem-val">@fauzan.alghif</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap" data-aos="fade-left">
+          <form class="contact-form" id="contactForm" onsubmit="handleFormSubmit(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Nama</label>
+                <input type="text" id="name" name="name" placeholder="Nama lengkap kamu" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="email@kamu.com" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="subject">Subjek</label>
+              <input type="text" id="subject" name="subject" placeholder="Perihal pesan" required />
+            </div>
+            <div class="form-group">
+              <label for="message">Pesan</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tuliskan pesanmu di sini..." required></textarea>
+            </div>
+            <button type="submit" class="btn-primary w-full">
+              <i class='bx bx-send'></i>
+              <span>Kirim Pesan</span>
+            </button>
+            <p class="form-note" id="formNote"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-logo">
+        <span class="logo-bracket">&lt;</span>FA<span class="logo-bracket">/&gt;</span>
+      </div>
+      <p class="footer-copy">© 2026 Fauzan Al-Ghifari. Dibuat dengan <i class='bx bxs-heart' style="color:#e25555"></i> dan banyak kopi.</p>
+      <div class="footer-socials">
+        <a href="https://github.com/fauzanalghif" target="_blank"><i class='bx bxl-github'></i></a>
+        <a href="https://www.linkedin.com/in/fauzan-al-ghifari-575085290/" target="_blank"><i class='bx bxl-linkedin'></i></a>
+        <a href="mailto:fauzanalghifari11@gmail.com"><i class='bx bx-envelope'></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <i class='bx bx-up-arrow-alt'></i>
+  </button>
+
+  <!-- Main JS -->
+  <script src="script.js"></script>
+</body>
+</html>
