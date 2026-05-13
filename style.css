@@ -978,3 +978,7 @@ button { cursor: default; border: none; background: none; }
   .soft-skills-grid { grid-template-columns: 1fr; }
   .hero-title { font-size: 2.4rem; }
 }
+
+{
+   cursor: auto !important
+}
