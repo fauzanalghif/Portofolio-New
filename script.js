@@ -16,36 +16,6 @@ window.addEventListener('load', () => {
   }, 2000);
 });
 
-/* ─── 2. CUSTOM CURSOR ──────────────────────────────────────── */
-const cursorDot  = document.getElementById('cursorDot');
-const cursorRing = document.getElementById('cursorRing');
-
-// Posisi ring sedikit tertinggal dari dot (efek smooth)
-let ringX = 0, ringY = 0;
-let dotX  = 0, dotY  = 0;
-
-document.addEventListener('mousemove', (e) => {
-  dotX = e.clientX;
-  dotY = e.clientY;
-  // Dot langsung mengikuti
-  cursorDot.style.left = dotX + 'px';
-  cursorDot.style.top  = dotY + 'px';
-});
-
-// Ring mengikuti dengan lag (lerp)
-function animateCursor() {
-  ringX += (dotX - ringX) * 0.12;
-  ringY += (dotY - ringY) * 0.12;
-  cursorRing.style.left = ringX + 'px';
-  cursorRing.style.top  = ringY + 'px';
-  requestAnimationFrame(animateCursor);
-}
-animateCursor();
-
-// Efek klik — menciutkan dot
-document.addEventListener('mousedown', () => cursorDot.style.transform = 'translate(-50%,-50%) scale(0.6)');
-document.addEventListener('mouseup',   () => cursorDot.style.transform = 'translate(-50%,-50%) scale(1)');
-
 /* ─── 3. NAVBAR ─────────────────────────────────────────────── */
 const navbar    = document.getElementById('navbar');
 const hamburger = document.getElementById('hamburger');
