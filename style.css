@@ -46,12 +46,45 @@ body {
   font-size: 16px;
   line-height: 1.7;
   overflow-x: hidden;
-  cursor: default; /* custom cursor */
+  cursor: none; /* custom cursor */
 }
 a { text-decoration: none; color: inherit; }
 img { display: block; max-width: 100%; }
 ul { list-style: none; }
-button { cursor: default; border: none; background: none; }
+button { cursor: none; border: none; background: none; }
+
+/* ─── Custom Cursor ──────────────────────────────────────────── */
+.cursor-dot {
+  position: fixed; top: 0; left: 0;
+  width: 8px; height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s;
+}
+.cursor-ring {
+  position: fixed; top: 0; left: 0;
+  width: 36px; height: 36px;
+  border: 2px solid rgba(99,102,241,0.5);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: transform 0.15s ease, width 0.3s, height 0.3s, border-color 0.3s;
+}
+body:has(a:hover) .cursor-ring,
+body:has(button:hover) .cursor-ring {
+  width: 52px; height: 52px;
+  border-color: var(--accent);
+  background: rgba(99,102,241,0.08);
+}
+@media (max-width: 768px) {
+  .cursor-dot, .cursor-ring { display: none; }
+  body { cursor: auto; }
+  button { cursor: pointer; }
+}
 
 /* ─── Loader ─────────────────────────────────────────────────── */
 .loader {
@@ -332,23 +365,40 @@ button { cursor: default; border: none; background: none; }
 }
 .hero-roles {
   display: flex; align-items: center; gap: 0.75rem;
-  margin-bottom: 1.5rem; height: 2.2rem; overflow: hidden;
+  margin-bottom: 1.5rem;
+  /* Tidak pakai overflow:hidden agar teks tidak terpotong */
 }
-.role-prefix { color: var(--accent); font-family: var(--font-mono); font-size: 1.1rem; }
+.role-prefix {
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  flex-shrink: 0; /* jangan sampai prefix ikut wrap */
+}
 .roles-wrapper {
-  display: flex; flex-direction: column;
-  animation: roleSlide 8s infinite;
+  /* JS akan mengatur teks yang tampil, bukan CSS animation */
+  display: inline-block;
 }
-.role-item {
-  color: var(--text-dim); font-size: 1rem; font-weight: 500;
-  white-space: nowrap; height: 2.5rem; display: flex; align-items: center;
+/* Satu teks role yang aktif ditampilkan JS */
+.role-text {
+  color: var(--accent-light);
+  font-size: 1rem;
+  font-weight: 500;
+  white-space: nowrap;
+  display: inline-block;
+  /* Animasi fade+slide masuk */
+  animation: roleFadeIn 0.5s ease forwards;
 }
-@keyframes roleSlide {
-  0%,18%   { transform: translateY(0); }
-  25%,43%  { transform: translateY(-2.5rem); }
-  50%,68%  { transform: translateY(-5rem); }
-  75%,93%  { transform: translateY(-7.5rem); }
-  100%     { transform: translateY(0); }
+@keyframes roleFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+/* Animasi fade keluar (ditambahkan JS) */
+.role-text.fade-out {
+  animation: roleFadeOut 0.4s ease forwards;
+}
+@keyframes roleFadeOut {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(-8px); }
 }
 .hero-desc {
   font-size: 1rem; color: var(--text-dim);
