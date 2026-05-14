@@ -235,8 +235,21 @@ function handleFormSubmit(e) {
   btn.disabled = true;
   btnSpan.textContent = 'Mengirim...';
 
+  /* Formspree */ 
+  ffetch(FORMSPREE_URL, {
+    method:'POST',
+    headers:{'Accept':'application/json','Content-Type':'application/json'},
+    body: JSON.stringify({name, email, subject, message})
+  })
+  .then(res => {
+    if (res.ok) { setNote('✅ Pesan terkirim! Terima kasih, saya akan segera membalas.','success'); form.reset(); }
+    else        { setNote('❌ Gagal mengirim. Coba lagi atau hubungi via email langsung.','error'); }
+  })
+  .catch(() => setNote('❌ Terjadi kesalahan jaringan.','error'))
+  .finally(() => { btn.disabled=false; btnSpan.textContent='Kirim Pesan'; }); 
+
   /* ── Aktifkan jika sudah punya Formspree ──
-  fetch(FORMSPREE_URL, {
+  ffetch(FORMSPREE_URL, {
     method:'POST',
     headers:{'Accept':'application/json','Content-Type':'application/json'},
     body: JSON.stringify({name, email, subject, message})
@@ -248,15 +261,6 @@ function handleFormSubmit(e) {
   .catch(() => setNote('❌ Terjadi kesalahan jaringan.','error'))
   .finally(() => { btn.disabled=false; btnSpan.textContent='Kirim Pesan'; });
   ── End Formspree ── */
-
-  // Simulasi (hapus jika sudah pakai Formspree)
-  setTimeout(() => {
-    setNote('✅ Pesan terkirim! Terima kasih, saya akan segera membalas.', 'success');
-    form.reset();
-    btn.disabled = false;
-    btnSpan.textContent = 'Kirim Pesan';
-  }, 1500);
-}
 
 function setNote(msg, type) {
   const note = document.getElementById('formNote');
