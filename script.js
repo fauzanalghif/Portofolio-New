@@ -236,7 +236,7 @@ function handleFormSubmit(e) {
   btnSpan.textContent = 'Mengirim...';
 
   /* Formspree */ 
-  ffetch(FORMSPREE_URL, {
+  fetch(FORMSPREE_URL, {
     method:'POST',
     headers:{'Accept':'application/json','Content-Type':'application/json'},
     body: JSON.stringify({name, email, subject, message})
