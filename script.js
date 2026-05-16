@@ -1,8 +1,6 @@
 /* ============================================================
    FAUZAN AL-GHIFARI PORTFOLIO — script.js
-   Berisi: Loader, Cursor, Navbar, Scroll Animations,
-           Role Typer, Stat Counter, Skill Bars,
-           Certificate Modal, Contact Form, Back-to-Top
+   Versi: 2.0 — Sinkron dengan index.html terbaru
    ============================================================ */
 
 /* ─── 1. LOADER ─────────────────────────────────────────────── */
@@ -203,64 +201,72 @@ document.addEventListener('keydown', e => {
   }
 });
 
-/* ─── 9. CONTACT FORM ────────────────────────────────────────── */
+/* ─── 9. CONTACT FORM (Formspree) ───────────────────────────── */
 /*
- * Untuk mengaktifkan pengiriman nyata via Formspree:
- * 1. Daftar di https://formspree.io (gratis)
- * 2. Buat form baru → salin endpoint
- * 3. Ganti FORMSPREE_URL di bawah
- * 4. Hapus blok simulasi & aktifkan blok fetch
+ * ⬇ GANTI "YOUR_FORM_ID" dengan Form ID kamu dari Formspree
+ * Contoh: jika endpoint kamu https://formspree.io/f/abcd1234
+ * maka tulis: 'https://formspree.io/f/abcd1234'
  */
-const FORMSPREE_URL = 'https://formspree.io/f/mpqbgllr'; // ← GANTI
+const FORMSPREE_URL = 'https://formspree.io/f/mpqbgllr'; // ← GANTI INI
 
 function handleFormSubmit(e) {
   e.preventDefault();
+
   const form    = document.getElementById('contactForm');
-  const note    = document.getElementById('formNote');
   const btn     = form.querySelector('button[type="submit"]');
   const btnSpan = btn.querySelector('span');
 
+  // Ambil nilai field
   const name    = document.getElementById('name').value.trim();
   const email   = document.getElementById('email').value.trim();
   const subject = document.getElementById('subject').value.trim();
   const message = document.getElementById('message').value.trim();
 
+  // Validasi sisi klien
   if (!name || !email || !subject || !message) {
-    setNote('Harap isi semua field terlebih dahulu.', 'error'); return;
+    setNote('⚠️ Harap isi semua field terlebih dahulu.', 'error');
+    return;
   }
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    setNote('Format email tidak valid.', 'error'); return;
+    setNote('⚠️ Format email tidak valid.', 'error');
+    return;
   }
 
-  btn.disabled = true;
+  // Loading state
+  btn.disabled        = true;
   btnSpan.textContent = 'Mengirim...';
 
-  /* Formspree */ 
+  // Kirim ke Formspree
   fetch(FORMSPREE_URL, {
-    method:'POST',
-    headers:{'Accept':'application/json','Content-Type':'application/json'},
-    body: JSON.stringify({name, email, subject, message})
+    method: 'POST',
+    headers: {
+      'Accept':       'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ name, email, subject, message })
   })
   .then(res => {
-    if (res.ok) { setNote('✅ Pesan terkirim! Terima kasih, saya akan segera membalas.','success'); form.reset(); }
-    else        { setNote('❌ Gagal mengirim. Coba lagi atau hubungi via email langsung.','error'); }
+    if (res.ok) {
+      setNote('✅ Pesan terkirim! Terima kasih, saya akan segera membalas.', 'success');
+      form.reset();
+    } else {
+      // Formspree mengembalikan detail error dalam JSON
+      return res.json().then(data => {
+        const errMsg = data.errors
+          ? data.errors.map(e => e.message).join(', ')
+          : 'Terjadi kesalahan, coba lagi.';
+        setNote('❌ ' + errMsg, 'error');
+      });
+    }
   })
-  .catch(() => setNote('❌ Terjadi kesalahan jaringan.','error'))
-  .finally(() => { btn.disabled=false; btnSpan.textContent='Kirim Pesan'; }); 
-
-  /* ── Aktifkan jika sudah punya Formspree ──
-  ffetch(FORMSPREE_URL, {
-    method:'POST',
-    headers:{'Accept':'application/json','Content-Type':'application/json'},
-    body: JSON.stringify({name, email, subject, message})
+  .catch(() => {
+    setNote('❌ Tidak bisa terhubung. Periksa koneksi internet kamu.', 'error');
   })
-  .then(res => {
-    if (res.ok) { setNote('✅ Pesan terkirim! Terima kasih, saya akan segera membalas.','success'); form.reset(); }
-    else        { setNote('❌ Gagal mengirim. Coba lagi atau hubungi via email langsung.','error'); }
-  })
-  .catch(() => setNote('❌ Terjadi kesalahan jaringan.','error'))
-  .finally(() => { btn.disabled=false; btnSpan.textContent='Kirim Pesan'; });
-  ── End Formspree ── */
+  .finally(() => {
+    btn.disabled        = false;
+    btnSpan.textContent = 'Kirim Pesan';
+  });
+}
 
 function setNote(msg, type) {
   const note = document.getElementById('formNote');
